@@ -9,6 +9,8 @@ namespace LeccionMVC.Controllers
 {
     public class OperacionesController : Controller
     {
+       
+
         public ViewResult Accion(string nombre)
         {
             return View(model:nombre);
@@ -51,5 +53,8 @@ namespace LeccionMVC.Controllers
 
             return temp;
         }
+
+
+     
     }
 }
