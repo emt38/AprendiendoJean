@@ -8,17 +8,32 @@ namespace LeccionMVC.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public class alumno
         {
-            return View();
+            public string nombre { get; set; }
+            public int edad { get; set; }
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
 
+
+        public ViewResult Index()
+        {
             return View();
+
         }
+
+
+        [HttpPost]
+        public ViewResult About()
+        {
+          ViewBag.Message = "Your application description page.";
+
+          return View();
+
+
+
+        }
+
 
         public ActionResult Contact()
         {
@@ -26,5 +41,37 @@ namespace LeccionMVC.Controllers
 
             return View();
         }
+
+        public FileResult archivo()
+        {
+            var ruta = Server.MapPath("Diplomado.pdf");
+            return File(ruta, "ApplicationException/pdf", "Diplomado.pdf");
+        }
+
+
+        [HttpPost]
+
+        public JsonResult prueba()
+        {
+            //            ViewBag.Message = "Your application description page.";
+
+            //           return View();
+
+            var alumno1 = new alumno { nombre = "jeancarlos", edad = 24 };
+            return Json(alumno1);
+        }
+      
+        public RedirectResult enlace()
+        {
+            return Redirect("https://www.google.com.do/");
+        }
+
+        public JavaScriptResult java()
+        {
+            string js = "@var numero = 2*5;";
+
+            return JavaScript(js);
+        }
+
     }
 }
