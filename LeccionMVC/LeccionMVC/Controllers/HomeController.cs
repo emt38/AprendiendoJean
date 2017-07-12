@@ -58,6 +58,7 @@ namespace LeccionMVC.Controllers
             //           return View();
 
             var alumno1 = new alumno { nombre = "jeancarlos", edad = 24 };
+            
             return Json(alumno1);
         }
       

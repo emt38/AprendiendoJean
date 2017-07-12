@@ -9,10 +9,22 @@ namespace LeccionMVC.Controllers
 {
     public class OperacionesController : Controller
     {
-       
+
+        [HttpGet]
+        public ViewResult PruebaSolicitud()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ViewResult Resultado(Persona val)
+        {
+            return View(val);
+        }
 
         public ViewResult Accion(string nombre)
         {
+            
             return View(model:nombre);
         }
 
