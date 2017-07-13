@@ -1,0 +1,3 @@
+﻿Crear un Controlador utilizando MagnaDB para manipular los modelos y otro con EntityFramework
+
+Los controladores serán de los modelos (que deben ser creados igualmente) Director y Género.

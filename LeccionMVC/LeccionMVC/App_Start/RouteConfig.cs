@@ -15,8 +15,8 @@ namespace LeccionMVC
 
             routes.MapRoute(
                 name: "Default",
-                url: "{action}/{controller}/{id}/{nombre}",
-                defaults: new { controller = "Operaciones", action = "Accion", nombre = UrlParameter.Optional, id = UrlParameter.Optional }
+                url: "{controller}/{action}/{id}/",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
             
         }
